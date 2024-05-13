@@ -1,7 +1,7 @@
 # tetris-deployment.yaml
 
 apiVersion: apps/v1
-kind: Rollout
+kind: Deployment
 metadata:
   name: tetris-deployment
 spec:
