@@ -5,15 +5,7 @@ kind: Deployment
 metadata:
   name: tetris-deployment
 spec:
-  replicas: 5
-  strategy:
-    canary:
-      stableService: tetris-stable
-      canaryService: tetris-canary
-      steps:
-      - setWeight: 50
-      - pause: {}
-  revisionHistoryLimit: 2
+  replicas: 2 # You can adjust the number of replicas as needed
   selector:
     matchLabels:
       app: tetris
@@ -24,6 +16,6 @@ spec:
     spec:
       containers:
         - name: tetris
-          image: log1cdk/tetris
+          image: log1cdk/tetris # Replace with the actual image tag
           ports:
-            - containerPort: 80
+            - containerPort: 80 # Replace with the port your Tetris game listens on
