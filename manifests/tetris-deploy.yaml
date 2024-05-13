@@ -1,22 +1,18 @@
 # tetris-deployment.yaml
 
 apiVersion: apps/v1
-kind: Deployment
+kind: Rollout
 metadata:
   name: tetris-deployment
 spec:
   replicas: 5
   strategy:
     canary:
+      stableService: tetris-stable
+      canaryService: tetris-canary
       steps:
-      - setWeight: 20
+      - setWeight: 50
       - pause: {}
-      - setWeight: 40
-      - pause: {duration: 10}
-      - setWeight: 60
-      - pause: {duration: 10}
-      - setWeight: 80
-      - pause: {duration: 10}
   revisionHistoryLimit: 2
   selector:
     matchLabels:
