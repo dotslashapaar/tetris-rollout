@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: tetris
-          image: log1cdk/tetrisv2 # Replace with the actual image tag
+          image: bsord/tetris # Replace with the actual image tag
           ports:
             - containerPort: 80 # Replace with the port your Tetris game listens on
 ---
@@ -47,7 +47,7 @@ spec:
     spec:
       containers:
       - name: tetris
-        image: log1cdk/tetrisv2
+        image: bsord/tetris
         ports:
         - containerPort: 80
           protocol: TCP
