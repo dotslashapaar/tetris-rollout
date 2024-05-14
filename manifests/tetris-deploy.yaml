@@ -28,8 +28,6 @@ spec:
   replicas: 5
   strategy:
     canary:
-      stableService: tetris-stable
-      canaryService: tetris-canary
       steps:
       - setWeight: 50
       - pause: {}
